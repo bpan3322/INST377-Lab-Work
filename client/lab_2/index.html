@@ -1,40 +1,66 @@
-YOUR NAME Lab 2: Intro to HTML
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Brian Pan Lab 2: CSS Selectors </title>
+       <link rel='stylesheet' href='styles.css'/>
+    </head>
+    
+    <body>
+        <div class = "title">
+            <h1>Brian Pan Lab 2: CSS Selectors</h1>
+        </div>
 
-Selectors
-Main Page
+        <div class = "nav">
+        <div class = "section_4">
+            <a href = selectors.html>Selectors</a>
+            <a href = index.html>Main Page</a>
+        </div>
+        </div>
+        <div class = "section_1">
+            <div class = "wrapper">
+            <p>Unordered list for my top 3 goals for this class.</p>
+            <ul>
+                <li>Learn front end web design</li>
+                <li>Learn new programming languages</li>
+                <li>Maybe spark an interest in web development</li>
+            </ul>
+            </div>
+            <div class = "wrapper">
+            <p>Now for my ordered list of my top 5 favorite albums.</p>
+            <ol>
+                <li>Frontyard EP - Boy in Space</li>
+                <li>Try again - Lauv</li>
+                <li>Jesus is King - Kanye</li>
+                <li>Edamame - bbno$</li>
+                <li>California - 88rising</li>
+            </ol>
+            </div>
+        </div>
 
-First, the basics.
+        <div class = "section_2"> 
+            <h2>Now for emphasized elements</h2>
+            <p>Sometimes, some words just want to be <em>more noticeable.</em>, and that's why we use emphasized elements.</p>
+            <p>However, italics isn't enough, so that's why we want to use a <strong>Strong element</strong>, and make it even more noticeable!</p>
+            <p>Sometimes, you want to do <em><strong>BOTH!!!</strong></em></p>
+        </div>
+        
+        <h2>Empty elements</h2>
+        <p>This is an example of a <br/> soft line break.</p>
+        <p>Followed by a hard line break underneath. </p>
+        <hr/>
 
-You need the following to build your website.
+        <h2>Images</h2>
+        <div class = "carousel">
+            <div class = "slides">
+            <img src = 'images/mochi.gif' alt='Mochi gif'/>
+            <img src = 'images/mochi.jpg' alt='Mochi jpg'/>
+            <img src = 'images/mochi.png' alt='Mochi png'/>
+            <img src = 'images/mochi.svg' alt='Mochi svg'/>
+            </div>
+        </div>
 
-HTML and CSS
-Javascript
-Node.js
-And other web development frameworks
-
-You should list your top 3 goals for the class below.
-
-Learn front-end web design
-Learn new programming languages
-Learn how to work with others in a technical space
-Learn popular web dev frameworks
-
-Let's Try Some Inline Elements
-
-Sometimes you want to draw attention to something in a line of text.
-
-Sometimes you want to strongly emphasize something in the text.
-
-Sometimes you want to do both.
-
-Empty Elements
-
-Soft line breaks can't wrap anything. Neither can image tags, or hard lines.
-Add a hard line under here, and make sure you've used some soft line breaks to match your page to the sample.
-
-Images 
-
-Don't forget to use alt text on your images. It's important for accessibility.
-
-Include a hyperlink here to your github repository for class.
-If you want your repo to be private, be sure to invite Prof A as a "collaborator."
+        <hr/>
+        <h2>Hyperlinks</h2>
+        <p><a href = https://github.com/bpan3322/INST377-Lab-Work>Hyperlink to GitHub repository for class.</a></p>
+    </body>
+</html>
