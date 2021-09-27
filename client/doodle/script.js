@@ -43,15 +43,15 @@ document.addEventListener('DOMContentLoaded',() =>{
         for (let i = 0; i < platformCount; i++){
             let platGap = 600 / platformCount
             let newPlatBottom = 100 + i * platGap
-            let newPlatform = new Platform()
-            createPlatforms.push(newPlatform)
+            let newPlatform = new Platform(newPlatBottom)
+            platforms.push(newPlatform)
         }
     }
 
     function movePlatforms(){
         if(doodlerBottomSpace > 200){
-            platforms.forEach(platofmr =>{
-                platforms.bottom -= 4
+            platforms.forEach(platform =>{
+                platform.bottom -= 4
                 let visual = platform.visual
                 visual.style.bottom = platform.bottom + 'px'
 
@@ -73,10 +73,11 @@ document.addEventListener('DOMContentLoaded',() =>{
         upTimerId = setInterval(function () {
             doodlerBottomSpace += 20
             doodler.style.bottom = doodlerBottomSpace + 'px'
-            if(doodlerBottomSpace > startPoint + 200){
+            if(doodlerBottomSpace > (startPoint + 200)){
                 fall()
+                isJumping = false
             }
-        },30)
+        }, 30)
     }
 
     function fall(){
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded',() =>{
             platforms.forEach(platform => {
                 if(
                     (doodlerBottomSpace >= platform.bottom) &&
-                    (doodlerBottomSpace <= platform.bottom + 15) && 
+                    (doodlerBottomSpace <= (platform.bottom + 15)) && 
                     ((doodlerLeftSpace + 60) >= platform.left) && 
                     (doodlerLeftSpace <= (platform.left + 85)) &&
                     !isJumping
@@ -99,16 +100,17 @@ document.addEventListener('DOMContentLoaded',() =>{
                     console.log('landed')
                     startPoint = doodlerBottomSpace 
                     jump()
+                    isJumping = true
                 }
             })
 
-        }, 30)
+        }, 20)
     }
 
     function gameOver(){
         isGameOver = true
         while(grid.firstChild){
-            grid.removeChild(grid.first)
+            grid.removeChild(grid.firstChild)
         }
         grid.innerHTML = score 
         clearInterval(upTimerId)
@@ -118,11 +120,12 @@ document.addEventListener('DOMContentLoaded',() =>{
     }
 
     function control(e){
-        if(e.key === "ArrowLeft"){
+        doodler.style.bottom = doodlerBottomSpace + 'px'
+        if(e.key === 'ArrowLeft'){
             moveLeft()
-        } else if (e.key === "ArrowRight"){
+        } else if (e.key === 'ArrowRight'){
             moveRight()
-        } else if (e.key === "ArrowUp"){
+        } else if (e.key === 'ArrowUp'){
             moveStraight()
         }
     }
@@ -167,7 +170,7 @@ document.addEventListener('DOMContentLoaded',() =>{
             createPlatforms()
             createDoodler()
             setInterval(movePlatforms, 30)
-            jump()
+            jump(startPoint)
             document.addEventListener('keyup', control)
         }
     }
