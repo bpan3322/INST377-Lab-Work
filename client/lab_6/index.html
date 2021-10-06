@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brian Pan : Lab 6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel='stylesheet' href='styles.css'>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+
+            <div class="box has-background-warning">Brian Pan Lab 6</div>
+
+            <!--entire thing is in columns-->
+            <div class="columns is-mobile is-centered is-vcentered">
+                
+
+                    <!--first nested column starts-->
+                    <div class="column is-one-third">
+                        <!--form connected to api page-->
+                        <form class="box" action = "/api">
+                            
+                            <!--Restaurant box-->
+                            <div class="field">
+                                <label class="label">Zip Code</label>
+                                <div class="control">
+                                    <input class="input search" type="text" placeholder="Type Zip Code here">
+                                </div>
+                            </div>
+                        </form>
+                            <!--first nested column ends-->
+                            <div class = "suggestions"></div>
+                    </div>
+
+
+                <!--entire Columns ending-->
+            </div>
+
+            <!--container div-->
+        </div>
+        <!--wrapper div-->
+    </div>
+
+    <script src = "script.js" charset="utf-8"></script>
+    
+</body>
+
+</html>
